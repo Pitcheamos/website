@@ -29,6 +29,19 @@
         fields.push({ name: 'mobilephone', value: data.get('telefono') });
       }
 
+      // Amplitude: tie this visitor (and their replays) to the lead.
+      if (window.amplitude) {
+        try {
+          window.amplitude.setUserId(String(data.get('email') || '').trim().toLowerCase() || undefined);
+          window.amplitude.track('Lead Submitted', {
+            form: data.get('form-name') || form.getAttribute('name'),
+            page: location.pathname,
+            has_phone: !!data.get('telefono'),
+            moment: data.get('momento') || undefined
+          });
+        } catch (err) {}
+      }
+
       var btn = form.querySelector('button[type=submit]');
       var label = btn ? btn.textContent : '';
       if (btn) { btn.disabled = true; btn.textContent = en ? 'Sending…' : 'Enviando…'; }

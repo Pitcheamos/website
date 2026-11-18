@@ -2,6 +2,17 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
+<!-- Amplitude: Analytics + Session Replay + Web Experiment + Guides & Surveys -->
+<script src="https://cdn.amplitude.com/script/f75ce8e8fee4c57b00bf503150c825ae.js"></script>
+<script src="https://cdn.amplitude.com/script/f75ce8e8fee4c57b00bf503150c825ae.engagement.js"></script>
+<script>
+  if (window.amplitude) {
+  if (window.sessionReplay) window.amplitude.add(window.sessionReplay.plugin({ sampleRate: 1, privacyConfig: { defaultMaskLevel: 'light', unmaskSelector: ['input', 'textarea', 'select'] } }));
+  if (window.engagement) window.amplitude.add(window.engagement.plugin());
+  window.amplitude.init('f75ce8e8fee4c57b00bf503150c825ae', { fetchRemoteConfig: true, autocapture: true });
+  }
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Simulador de búsqueda laboral · Pitcheamos</title>
 <meta name="description" content="¿Cuánto podés tardar en conseguir trabajo? Una estimación con datos de mercado según las horas que le dedicás a tu búsqueda.">
@@ -362,6 +373,24 @@ function render(){
 }
 
 document.getElementById('f').addEventListener('input', render);
+
+// Amplitude: one event per simulator use (after the visitor stops changing inputs).
+let simTimer;
+document.getElementById('f').addEventListener('input', () => {
+  clearTimeout(simTimer);
+  simTimer = setTimeout(() => {
+    if (!window.amplitude) return;
+    try {
+      window.amplitude.track('Simulator Result Viewed', {
+        hours: +document.getElementById('hours').value,
+        market: val('market'), level: val('level'),
+        network: +val('network'), tailor: +val('tailor'),
+        result_now: document.getElementById('nowBig').textContent,
+        result_method: document.getElementById('mBig').textContent
+      });
+    } catch (err) {}
+  }, 1500);
+});
 // Booking page (Google Calendar appointment schedule). Until it is set, the button goes to the form.
 const BOOKING_URL = '';
 const bookBtn = document.getElementById('bookBtn');

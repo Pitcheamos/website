@@ -1,5 +1,16 @@
 <!doctype html>
-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+<html lang="es"><head><meta charset="utf-8">
+<!-- Amplitude: Analytics + Session Replay + Web Experiment + Guides & Surveys -->
+<script src="https://cdn.amplitude.com/script/f75ce8e8fee4c57b00bf503150c825ae.js"></script>
+<script src="https://cdn.amplitude.com/script/f75ce8e8fee4c57b00bf503150c825ae.engagement.js"></script>
+<script>
+  if (window.amplitude) {
+  if (window.sessionReplay) window.amplitude.add(window.sessionReplay.plugin({ sampleRate: 1, privacyConfig: { defaultMaskLevel: 'light', unmaskSelector: ['input', 'textarea', 'select'] } }));
+  if (window.engagement) window.amplitude.add(window.engagement.plugin());
+  window.amplitude.init('f75ce8e8fee4c57b00bf503150c825ae', { fetchRemoteConfig: true, autocapture: true });
+  }
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
 <title>Aviso de privacidad · Pitcheamos</title>
 <link rel="alternate" hreflang="en" href="https://pitcheamos.com/en/privacy">
 <style>:root{--bg:#F7F4EF;--navy:#14213D;--coral:#EF6450;--muted:#5B6474;--line:#E4DED4}
@@ -22,7 +33,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 <header><div class="wrap"><a class="brand" href="/"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M12 10 H58 Q66 10 66 18 V48 Q66 56 58 56 H30 L18 68 V56 H12 Q4 56 4 48 V18 Q4 10 12 10 Z" fill="#14213D"/><path d="M88 40 H48 Q40 40 40 48 V74 Q40 82 48 82 H72 L84 94 V82 H88 Q96 82 96 74 V48 Q96 40 88 40 Z" fill="#EF6450"/></svg> PITCHEAMOS</a><a href="/en/privacy">EN</a></div></header>
 <main><div class="wrap">
 <h1>Aviso de privacidad</h1>
-<p class="date">Última actualización: 17 de noviembre de 2026</p>
+<p class="date">Última actualización: 18 de noviembre de 2026</p>
 
 <h2>1. Quién es responsable de tus datos</h2>
 <p><b>Revum Group LLC</b>, que ofrece servicios de coaching de carrera bajo la marca <b>Pitcheamos</b>, con domicilio en 3801 Avalon Park E Blvd, FL 2 STE 217, Orlando, FL 32828, Estados Unidos, es responsable del tratamiento de tus datos personales, conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.</p>
@@ -33,6 +44,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 <ul>
 <li>Nombre, email y, si lo dejás, teléfono o WhatsApp.</li>
 <li>Lo que nos contás en el mensaje sobre tu búsqueda o tu carrera.</li>
+<li>Datos de navegación en esta web (ver la sección de cookies).</li>
 <li>Si usás el simulador y después nos escribís: las respuestas que elegiste (horas por semana, mercado, nivel, uso de contactos y de CV adaptado) y el resultado estimado.</li>
 </ul>
 <p><b>No pedimos datos personales sensibles</b> (salud, religión, origen étnico, etc.). Te pedimos que no los incluyas en tus mensajes.</p>
@@ -44,6 +56,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 <li>Responder tu mensaje y coordinar una llamada o sesión de diagnóstico.</li>
 <li>Agendar, confirmar o reprogramar citas.</li>
 <li>Si contratás un servicio, prestarlo y darle seguimiento.</li>
+<li>Medir y mejorar el funcionamiento de la web.</li>
 </ul>
 <p><b>Finalidad adicional</b> (podés oponerte cuando quieras):</p>
 <ul>
@@ -53,7 +66,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 
 <h2>4. Con quién se comparten</h2>
 <p><b>No vendemos, alquilamos ni compartimos tus datos con terceros</b> para sus propios fines.</p>
-<p>Para operar usamos proveedores que guardan la información por cuenta nuestra y solo para estos fines: <b>Netlify</b> (alojamiento de la web y recepción de formularios), <b>HubSpot</b> (gestión de contactos y agenda de reuniones) y <b>Google Workspace</b> (correo y calendario). Sus servidores pueden estar fuera de México.</p>
+<p>Para operar usamos proveedores que guardan la información por cuenta nuestra y solo para estos fines: <b>Netlify</b> (alojamiento de la web y recepción de formularios), <b>HubSpot</b> (gestión de contactos y agenda de reuniones), <b>Amplitude</b> (medición del uso de la web) y <b>Google Workspace</b> (correo y calendario). Sus servidores pueden estar fuera de México.</p>
 <p>Solo entregaríamos datos a una autoridad si una ley o una orden judicial lo exige.</p>
 
 <h2>5. Tus derechos (ARCO) y cómo ejercerlos</h2>
@@ -69,7 +82,8 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 <p>Mientras dure nuestro contacto o el servicio, y luego el tiempo necesario para cumplir obligaciones legales. Si no avanzamos a trabajar juntos, borramos tus datos a los 12 meses de tu último contacto, o antes si nos lo pedís.</p>
 
 <h2>7. Cookies</h2>
-<p>Esta web no usa cookies de publicidad ni de seguimiento. Cargamos la tipografía desde Google Fonts, que puede registrar datos técnicos de tu navegador (como la dirección IP).</p>
+<p>Usamos <b>Amplitude</b> para entender cómo se usa la web y mejorarla. Amplitude usa cookies y almacenamiento del navegador para registrar datos técnicos y de navegación: páginas que visitás, clics, tipo de dispositivo, navegador y ubicación aproximada. También graba cómo te movés por la página (repetición de sesión), incluido lo que escribís en los formularios. Solo nosotros vemos esas grabaciones. Si nos dejás tus datos, asociamos esa navegación a tu email para atenderte mejor. Con Amplitude también podemos mostrarte mensajes, encuestas breves o probar distintas versiones de la página.</p>
+<p>No usamos cookies de publicidad. Podés bloquear o borrar las cookies desde la configuración de tu navegador. Cargamos la tipografía desde Google Fonts, que puede registrar datos técnicos de tu navegador (como la dirección IP).</p>
 
 <h2>8. Cambios a este aviso</h2>
 <p>Si cambiamos este aviso, publicaremos la nueva versión en esta misma página con su fecha de actualización.</p>

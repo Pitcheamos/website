@@ -1,5 +1,16 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+<html lang="en"><head><meta charset="utf-8">
+<!-- Amplitude: Analytics + Session Replay + Web Experiment + Guides & Surveys -->
+<script src="https://cdn.amplitude.com/script/f75ce8e8fee4c57b00bf503150c825ae.js"></script>
+<script src="https://cdn.amplitude.com/script/f75ce8e8fee4c57b00bf503150c825ae.engagement.js"></script>
+<script>
+  if (window.amplitude) {
+  if (window.sessionReplay) window.amplitude.add(window.sessionReplay.plugin({ sampleRate: 1, privacyConfig: { defaultMaskLevel: 'light', unmaskSelector: ['input', 'textarea', 'select'] } }));
+  if (window.engagement) window.amplitude.add(window.engagement.plugin());
+  window.amplitude.init('f75ce8e8fee4c57b00bf503150c825ae', { fetchRemoteConfig: true, autocapture: true });
+  }
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
 <title>Privacy notice · Pitcheamos</title>
 <link rel="alternate" hreflang="es" href="https://pitcheamos.com/privacidad">
 <style>:root{--bg:#F7F4EF;--navy:#14213D;--coral:#EF6450;--muted:#5B6474;--line:#E4DED4}
@@ -22,7 +33,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 <header><div class="wrap"><a class="brand" href="/en/"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M12 10 H58 Q66 10 66 18 V48 Q66 56 58 56 H30 L18 68 V56 H12 Q4 56 4 48 V18 Q4 10 12 10 Z" fill="#14213D"/><path d="M88 40 H48 Q40 40 40 48 V74 Q40 82 48 82 H72 L84 94 V82 H88 Q96 82 96 74 V48 Q96 40 88 40 Z" fill="#EF6450"/></svg> PITCHEAMOS</a><a href="/privacidad">ES</a></div></header>
 <main><div class="wrap">
 <h1>Privacy notice</h1>
-<p class="date">Last updated: November 17, 2026</p>
+<p class="date">Last updated: November 18, 2026</p>
 <p><i>This is a translation for convenience. The Spanish version is the official one under Mexican law.</i></p>
 
 <h2>1. Who is responsible for your data</h2>
@@ -34,6 +45,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 <ul>
 <li>Name, email and, if you choose to, phone or WhatsApp number.</li>
 <li>What you tell us in your message about your job search or career.</li>
+<li>Browsing data on this site (see the cookies section).</li>
 <li>If you use the simulator and then contact us: the answers you picked (hours per week, market, level, use of contacts and tailored CV) and the estimated result.</li>
 </ul>
 <p><b>We don't ask for sensitive personal data</b> (health, religion, ethnic origin, etc.). Please don't include it in your messages.</p>
@@ -45,6 +57,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 <li>Replying to your message and setting up a call or diagnostic session.</li>
 <li>Booking, confirming or rescheduling appointments.</li>
 <li>If you hire a service, delivering it and following up.</li>
+<li>Measuring and improving how the site works.</li>
 </ul>
 <p><b>Additional purpose</b> (you can opt out anytime):</p>
 <ul>
@@ -54,7 +67,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 
 <h2>4. Who we share it with</h2>
 <p><b>We don't sell, rent or share your data with third parties</b> for their own purposes.</p>
-<p>We use providers that store information on our behalf and only for these purposes: <b>Netlify</b> (website hosting and form handling), <b>HubSpot</b> (contact management and meeting scheduling) and <b>Google Workspace</b> (email and calendar). Their servers may be outside Mexico.</p>
+<p>We use providers that store information on our behalf and only for these purposes: <b>Netlify</b> (website hosting and form handling), <b>HubSpot</b> (contact management and meeting scheduling), <b>Amplitude</b> (website usage analytics) and <b>Google Workspace</b> (email and calendar). Their servers may be outside Mexico.</p>
 <p>We would only hand over data to an authority if a law or court order requires it.</p>
 
 <h2>5. Your rights and how to use them</h2>
@@ -65,7 +78,8 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 <p>For as long as we're in contact or working together, and then as long as legally required. If we don't end up working together, we delete your data 12 months after your last contact, or sooner if you ask.</p>
 
 <h2>7. Cookies</h2>
-<p>This site doesn't use advertising or tracking cookies. We load our font from Google Fonts, which may log technical data from your browser (such as your IP address).</p>
+<p>We use <b>Amplitude</b> to understand how the site is used and improve it. Amplitude uses cookies and browser storage to record technical and browsing data: pages you visit, clicks, device type, browser and approximate location. It also records how you move through the page (session replay), including what you type into forms. Only we can see these recordings. If you leave us your details, we link that browsing to your email to serve you better. Amplitude also lets us show you messages, short surveys or test different versions of the page.</p>
+<p>We don't use advertising cookies. You can block or delete cookies in your browser settings. We load our font from Google Fonts, which may log technical data from your browser (such as your IP address).</p>
 
 <h2>8. Changes to this notice</h2>
 <p>If we change this notice, we'll post the new version on this page with its update date.</p>
