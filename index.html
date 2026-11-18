@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pitcheamos · Coaching de carrera</title>
+<meta name="description" content="Te ayudo a venderte: entrevistas, negociación y confianza. Coaching de carrera con la mirada de alguien que vende todos los días.">
+<meta property="og:title" content="Pitcheamos · Coaching de carrera">
+<meta property="og:description" content="Te ayudo a venderte: entrevistas, negociación y confianza.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="alternate" hreflang="es" href="https://pitcheamos.com/">
+<link rel="alternate" hreflang="en" href="https://pitcheamos.com/en/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F7F4EF;--navy:#14213D;--coral:#EF6450;--muted:#5B6474;--line:#E4DED4;--card:#FFFFFF}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--navy);font-family:'Inter',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.wrap>*{min-width:0}
+h1,h2{overflow-wrap:break-word}
+.hl{color:var(--coral)}
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:rgba(247,244,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:900;letter-spacing:.06em;font-size:17px}
+.logo svg{width:34px;height:34px}
+.btn{display:inline-block;background:var(--coral);color:#fff;text-decoration:none;font-weight:700;padding:14px 24px;border-radius:999px;border:0;font-size:16px;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--navy);border:2px solid var(--navy)}
+nav .btn{padding:10px 18px;font-size:14px}
+.navr{display:flex;align-items:center;gap:16px}
+.lang{font-size:14px;font-weight:700;color:var(--muted);text-decoration:none}
+.lang b{color:var(--navy)}
+/* hero */
+.hero{padding:88px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center}
+.eyebrow{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin-bottom:18px}
+h1{font-size:clamp(44px,6.4vw,80px);line-height:1.02;letter-spacing:-.035em;font-weight:900}
+.lead{font-size:20px;color:var(--muted);margin:24px 0 32px;max-width:540px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.stat{background:var(--navy);color:#fff;border-radius:28px;padding:40px}
+.stat .big{font-size:clamp(44px,4.4vw,58px);white-space:nowrap;font-weight:900;letter-spacing:-.03em;line-height:1}
+.stat .arrow{color:var(--coral);font-size:40px;margin:8px 0}
+.stat p{color:#C9CFDB;margin-top:20px;font-size:18px}
+.stat p b{color:#fff}
+/* sections */
+section{padding:80px 0}
+h2{font-size:clamp(32px,4.2vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:900;max-width:760px}
+.sub{color:var(--muted);font-size:18px;margin-top:14px;max-width:640px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px}
+.card h3{font-size:21px;font-weight:800;letter-spacing:-.01em;margin-bottom:10px}
+.card p{color:var(--muted)}
+.num{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;background:var(--coral);color:#fff;font-weight:800;margin-bottom:18px}
+.why{background:var(--navy);color:#fff}
+.why .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.why .sub{color:#C9CFDB}
+.why ul{list-style:none;display:grid;gap:18px}
+.why li{display:flex;gap:16px;align-items:flex-start;font-size:18px}
+.why li::before{content:"";flex:none;width:12px;height:12px;border-radius:4px;background:var(--coral);margin-top:9px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:44px}
+.note{margin-top:24px;padding:20px 24px;border-left:4px solid var(--coral);background:var(--card);border-radius:0 14px 14px 0;color:var(--muted)}
+.note b{color:var(--navy)}
+.plan{display:flex;flex-direction:column}
+.plan .tag{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
+.plan ul{margin:16px 0 0 18px;color:var(--muted)}
+.plan ul li{margin-bottom:6px}
+.plan.featured{border:2px solid var(--coral)}
+.pilot{margin-top:28px;text-align:center;color:var(--muted)}
+.pilot b{color:var(--coral)}
+.en{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:40px}
+.en .flag{font-size:56px}
+.faq{max-width:780px;margin-top:36px}
+details{border-bottom:1px solid var(--line);padding:22px 0}
+summary{cursor:pointer;font-weight:700;font-size:19px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";color:var(--coral);font-weight:900;font-size:24px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin-top:10px}
+/* contact */
+.contact .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:56px}
+form{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:36px;display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+label{font-weight:600;font-size:15px;display:grid;gap:6px}
+input,select,textarea{width:100%;min-width:0;font:inherit;color:var(--navy);padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;background:#FDFCFA}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--coral)}
+textarea{min-height:120px;resize:vertical}
+.hidden{display:none}
+.small{font-size:14px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:900px){
+  .hero .wrap,.why .wrap,.contact .wrap{grid-template-columns:1fr}
+  .grid3{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .hero{padding:56px 0 40px} section{padding:60px 0}
+  .en{grid-template-columns:1fr}
+}
+@media (max-width:520px){.steps{grid-template-columns:1fr} nav .btn{display:none} .stat{padding:28px} .stat .big{font-size:46px} form{padding:24px}}
+.bio .wrap{display:grid;grid-template-columns:240px minmax(0,1fr);gap:48px;align-items:start}
+.bio .avatar{width:240px;height:240px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:72px;letter-spacing:-.02em;overflow:hidden;border:6px solid var(--coral)}
+.bio .avatar img{width:100%;height:100%;object-fit:cover}
+.bio p{color:var(--muted);font-size:17px;margin-top:14px;max-width:680px}
+.bio p b{color:var(--navy)}
+.bio .facts{display:grid;grid-template-columns:repeat(3,minmax(0,max-content));gap:28px;margin-top:24px}
+.bio .facts div{min-width:0}
+.bio .facts strong{display:block;font-size:34px;font-weight:900;color:var(--coral);letter-spacing:-.02em;line-height:1.1}
+.bio .facts span{font-size:14px;color:var(--muted)}
+@media (max-width:760px){.bio .facts{gap:16px}.bio .facts strong{font-size:28px}.bio .facts span{font-size:12px;display:block;line-height:1.3}.bio .wrap{grid-template-columns:minmax(0,1fr);gap:24px}.bio .avatar{width:150px;height:150px;font-size:46px}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="logo" href="/"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#mark"/></svg>PITCHEAMOS</a>
+  <div class="navr"><a class="lang" href="/en/" hreflang="en"><b>ES</b> | EN</a><a class="btn" href="#contacto">Agendá tu diagnóstico</a></div>
+</div></nav>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="mark" viewBox="0 0 100 100">
+      <path d="M12 10 H58 Q66 10 66 18 V48 Q66 56 58 56 H30 L18 68 V56 H12 Q4 56 4 48 V18 Q4 10 12 10 Z" fill="#14213D"/>
+      <path d="M88 40 H48 Q40 40 40 48 V74 Q40 82 48 82 H72 L84 94 V82 H88 Q96 82 96 74 V48 Q96 40 88 40 Z" fill="#EF6450"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="hero"><div class="wrap">
+  <div>
+    <span class="eyebrow">Coaching de carrera</span>
+    <h1>Te ayudo a <span class="hl">venderte.</span></h1>
+    <p class="lead">Entrevistas, negociación y confianza, con la mirada de alguien que vende todos los días. Desde el CV hasta la oferta, lo hacemos juntos.</p>
+    <div class="ctas">
+      <a class="btn" href="#contacto">Quiero mi diagnóstico</a>
+      <a class="btn ghost" href="#como">Cómo trabajamos</a>
+    </div>
+  </div>
+  <div class="stat">
+    <div class="big">20 CVs</div>
+    <div class="arrow">↓</div>
+    <div class="big">2 respuestas</div>
+    <p>¿Te suena? <b>El problema casi nunca es el mercado.</b> Es cómo te estás presentando.</p>
+  </div>
+</div></header>
+
+<section><div class="wrap">
+  <h2>Si te pasa alguna de estas, <span class="hl">hablemos.</span></h2>
+  <div class="grid3">
+    <div class="card"><h3>Postulás y no te llaman</h3><p>Mandás CVs todas las semanas y casi nadie responde. No sabés si el problema es el CV, el foco o los avisos.</p></div>
+    <div class="card"><h3>Llegás, pero no cerrás</h3><p>Pasás las primeras etapas, pero en la entrevista final o en el challenge se cae. Y nadie te dice por qué.</p></div>
+    <div class="card"><h3>Te llega la oferta y dudás</h3><p>No sabés cuánto pedir, si negociar o cómo hacerlo sin quemar la oportunidad.</p></div>
+  </div>
+</div></section>
+
+<section class="why"><div class="wrap">
+  <div>
+    <span class="eyebrow">Por qué Pitcheamos</span>
+    <h2>Pitchear es presentar algo para que te digan que sí.</h2>
+    <p class="sub">Trabajo en ventas y lo hago todos los días. Una búsqueda laboral funciona igual: del otro lado hay alguien con un problema, y vos sos la solución. Va en plural porque lo hacemos juntos.</p>
+  </div>
+  <ul>
+    <li>Leés el aviso como lo lee el que contrata.</li>
+    <li>Contás tu historia como un pitch, no como un currículum.</li>
+    <li>Llegás a cada entrevista con un plan, no con nervios.</li>
+    <li>Negociás la oferta sin miedo a perderla.</li>
+  </ul>
+</div></section>
+
+<section class="bio" id="quien"><div class="wrap">
+  <div class="avatar" aria-hidden="true">MB</div>
+  <div>
+    <span class="eyebrow">Quién está detrás</span>
+    <h2>Soy Mati. Hace años que estoy <span class="hl">del otro lado de la mesa.</span></h2>
+    <div class="facts">
+      <div><strong>+100</strong><span>personas entrevistadas</span></div>
+      <div><strong>+30</strong><span>contrataciones</span></div>
+      <div><strong>15</strong><span>años en ventas</span></div>
+    </div>
+    <p>En los últimos 4 años entrevisté a más de 100 personas y contraté a más de 30. Sé qué hace que alguien quede y qué hace que lo descarten en los primeros cinco minutos.</p>
+    <p>Llevo 15 años en ventas, trabajando con clientes y equipos de Latinoamérica, Estados Unidos y Europa. En 2023 me mudé a México para abrir la región norte de Latinoamérica desde cero en la empresa donde trabajo. Estudié Turismo, hice un MBA en el Tec de Monterrey y me formé en ventas y coaching.</p>
+    <p>Hoy junto las dos miradas, la del que vende y la del que contrata, para que vos te vendas mejor: que cuentes tu historia con claridad, negocies lo que valés y llegues a cada entrevista con confianza.</p>
+  </div>
+</div></section>
+
+<section id="como"><div class="wrap">
+  <h2>Cómo <span class="hl">trabajamos</span></h2>
+  <p class="sub">Un método en cuatro etapas. Arrancamos donde estés hoy.</p>
+  <div class="steps">
+    <div class="card"><div class="num">1</div><h3>Diagnóstico</h3><p>Dónde estás, qué buscás y qué está trabando el proceso. Sale un plan concreto.</p></div>
+    <div class="card"><div class="num">2</div><h3>Posicionamiento</h3><p>CV, LinkedIn y tu pitch alineados a un foco claro.</p></div>
+    <div class="card"><div class="num">3</div><h3>Entrevistas y challenges</h3><p>Investigación de la empresa, simulacros y feedback de tus casos.</p></div>
+    <div class="card"><div class="num">4</div><h3>Oferta y negociación</h3><p>Rango, paquete y cómo pedirlo para cerrar en las mejores condiciones.</p></div>
+  </div>
+  <p class="note"><b>En todo el proceso trabajamos la confianza:</b> banco de logros, preparación antes de cada entrevista y un debrief después. No es terapia: es método y práctica.</p>
+</div></section>
+
+<section><div class="wrap">
+  <a href="/simulador" class="simcta" style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;background:var(--navy);color:#fff;text-decoration:none;border-radius:28px;padding:36px 40px">
+    <div style="min-width:0;flex:1 1 320px"><span class="eyebrow">Simulador gratis</span><h2 style="color:#fff">¿Cuánto podés tardar en <span class="hl">conseguir trabajo?</span></h2><p style="color:#C9CFDB;margin-top:10px">Calculalo en 1 minuto con datos de mercado y compará cómo cambia con el Método Pitcheamos.</p></div>
+    <span class="btn">Probar el simulador →</span>
+  </a>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Elegí cómo <span class="hl">arrancar</span></h2>
+  <div class="grid3">
+    <div class="card plan"><span class="tag">Para empezar</span><h3>Diagnóstico</h3><p>Una sesión para entender tu situación y salir con un plan.</p>
+      <ul><li>Formulario previo</li><li>Sesión 1:1 por videollamada</li><li>Plan de acción por escrito</li></ul></div>
+    <div class="card plan featured"><span class="tag">Más elegido</span><h3>Acompañamiento completo</h3><p>De 4 a 8 semanas, desde el CV hasta la oferta.</p>
+      <ul><li>Todo el método</li><li>Simulacros de entrevista</li><li>Revisión de challenges</li><li>Check-ins semanales</li></ul></div>
+    <div class="card plan"><span class="tag">Puntual</span><h3>Por proceso</h3><p>Tenés una entrevista importante y querés llegar listo.</p>
+      <ul><li>Investigación de la empresa y del entrevistador</li><li>Preparación y simulacro</li><li>Feedback del challenge</li></ul></div>
+  </div>
+  <p class="pilot"><b>Cupos de lanzamiento limitados.</b> Escribime y te cuento las condiciones.</p>
+</div></section>
+
+<section><div class="wrap">
+  <div class="en">
+    <div class="flag">🌎</div>
+    <div>
+      <h2 style="font-size:clamp(26px,3.2vw,36px)">¿Aplicás afuera? También preparamos <span class="hl">entrevistas en inglés.</span></h2>
+      <p class="sub">Pensás en español, pero tenés que rendir en inglés. Armamos tu pitch, tus respuestas y tu negociación para procesos internacionales. <i>Interviews abroad too.</i></p>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Preguntas <span class="hl">frecuentes</span></h2>
+  <div class="faq">
+    <details><summary>¿Es online?</summary><p>Sí. Todas las sesiones son por videollamada, así que trabajamos desde cualquier país.</p></details>
+    <details><summary>¿Sirve si busco trabajo en otro país?</summary><p>Sí. Preparamos procesos para LATAM y para afuera, en español o en inglés.</p></details>
+    <details><summary>¿Cuánto tiempo lleva?</summary><p>El diagnóstico es una sesión. El acompañamiento completo dura entre 4 y 8 semanas, según cómo avance tu búsqueda.</p></details>
+    <details><summary>¿Me consiguen trabajo?</summary><p>No soy una consultora de reclutamiento: no te presento a empresas. Te preparo para que cada postulación y cada entrevista tengan más chances.</p></details>
+    <details><summary>¿Es terapia?</summary><p>No. Trabajamos la confianza con método y práctica. Si aparece algo que necesita un profesional de la salud, te lo digo.</p></details>
+  </div>
+</div></section>
+
+<section class="contact" id="contacto"><div class="wrap">
+  <div>
+    <span class="eyebrow">Contacto</span>
+    <h2>Empecemos por un <span class="hl">diagnóstico.</span></h2>
+    <p class="sub">Contame en qué momento estás y te respondo para coordinar. Si preferís, escribime por Instagram.</p>
+    <p style="margin-top:24px"><a class="btn ghost" href="https://ig.me/m/pitcheamos" target="_blank" rel="noopener">Escribime por Instagram</a></p>
+  </div>
+  <form name="contacto" data-hs method="POST" action="/gracias">
+    <input type="hidden" name="form-name" value="contacto">
+    <input type="hidden" name="subject" value="Nuevo contacto en Pitcheamos">
+    <p class="hidden"><label>No completar: <input name="bot-field"></label></p>
+    <label>Nombre<input type="text" name="nombre" required></label>
+    <label>Email<input type="email" name="email" required></label>
+    <label>¿En qué momento estás?
+      <select name="momento" required>
+        <option value="">Elegí una opción</option>
+        <option>Estoy buscando trabajo</option>
+        <option>Tengo trabajo y quiero cambiar</option>
+        <option>Tengo una entrevista o un challenge pronto</option>
+        <option>Me llegó una oferta y quiero negociarla</option>
+        <option>Quiero aplicar afuera</option>
+      </select></label>
+    <label>Contame un poco más<textarea name="mensaje" placeholder="Qué buscás, qué te está costando, cuándo te gustaría arrancar…"></textarea></label>
+    <button class="btn" type="submit">Enviar</button>
+    <p class="small">Te respondo en menos de 48 horas. Al enviar, aceptás nuestro <a href="/privacidad">aviso de privacidad</a>.</p>
+  </form>
+</div></section>
+
+<footer><div class="wrap">
+  <span>© 2026 Pitcheamos · Coaching de carrera · Una marca de Revum Group LLC</span>
+  <span><a href="https://instagram.com/pitcheamos" target="_blank" rel="noopener">@pitcheamos</a> · pitcheamos.com · <a href="/privacidad">Aviso de privacidad</a></span>
+</div></footer>
+
+<script src="/hs.js"></script>
+</body>
+</html>
