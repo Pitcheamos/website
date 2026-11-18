@@ -23,7 +23,10 @@
         { name: 'email', value: data.get('email') || '' },
         { name: 'message', value: lines.join('\n') }
       ];
-      if (data.get('telefono')) fields.push({ name: 'phone', value: data.get('telefono') });
+      if (data.get('telefono')) {
+        fields.push({ name: 'phone', value: data.get('telefono') });
+        fields.push({ name: 'mobilephone', value: data.get('telefono') });
+      }
 
       var btn = form.querySelector('button[type=submit]');
       var label = btn ? btn.textContent : '';
