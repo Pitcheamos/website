@@ -1,0 +1,5 @@
+# Send the .com.mx domains to the primary domain
+https://pitcheamos.com.mx/*      https://pitcheamos.com/:splat  301!
+https://www.pitcheamos.com.mx/*  https://pitcheamos.com/:splat  301!
+http://pitcheamos.com.mx/*       https://pitcheamos.com/:splat  301!
+http://www.pitcheamos.com.mx/*   https://pitcheamos.com/:splat  301!
