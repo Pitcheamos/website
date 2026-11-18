@@ -21,7 +21,8 @@
       var fields = [
         { name: 'firstname', value: data.get('nombre') || '' },
         { name: 'email', value: data.get('email') || '' },
-        { name: 'message', value: lines.join('\n') }
+        { name: 'message', value: lines.join('\n') },
+        { name: 'comments', value: lines.join('\n') }
       ];
       if (data.get('telefono')) {
         fields.push({ name: 'phone', value: data.get('telefono') });
