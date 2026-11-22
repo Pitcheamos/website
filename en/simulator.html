@@ -155,8 +155,8 @@ section[id]{scroll-margin-top:72px}
 
 <nav><div class="wrap">
   <a class="logo" href="/en/"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#mark"/></svg>PITCHEAMOS</a>
-  <div class="links"><a href="/en/#about">About me</a><a href="/en/#how">Method</a><a href="/en/simulator" class="on" aria-current="page">Simulator</a><a href="/en/#plans">Plans</a><a href="/en/#faq">FAQ</a><a class="btn btn-m" href="#talk">Book your assessment</a></div>
-  <div class="navend"><a class="lang" href="/simulador" title="Español">ES</a><a class="btn" href="#talk">Book your assessment</a><button class="burger" aria-label="Open menu" aria-expanded="false" onclick="var n=this.closest('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><span></span><span></span><span></span></button></div>
+  <div class="links"><a href="/en/#about">About me</a><a href="/en/#how">Method</a><a href="/en/simulator" class="on" aria-current="page">Simulator</a><a href="/en/#plans">Plans</a><a href="/en/#faq">FAQ</a><a class="btn btn-m" href="https://meetings.hubspot.com/matias-bossie" target="_blank" rel="noopener">Book your assessment</a></div>
+  <div class="navend"><a class="lang" href="/simulador" title="Español">ES</a><a class="btn" href="https://meetings.hubspot.com/matias-bossie" target="_blank" rel="noopener">Book your assessment</a><button class="burger" aria-label="Open menu" aria-expanded="false" onclick="var n=this.closest('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><span></span><span></span><span></span></button></div>
 </div></nav>
 
 <header><div class="wrap">
@@ -421,7 +421,7 @@ document.getElementById('f').addEventListener('input', () => {
   }, 1500);
 });
 // Booking page (Google Calendar appointment schedule). Until it is set, the button goes to the form.
-const BOOKING_URL = '';
+const BOOKING_URL = 'https://meetings.hubspot.com/matias-bossie';
 const bookBtn = document.getElementById('bookBtn');
 if (BOOKING_URL) { bookBtn.href = BOOKING_URL; } else { bookBtn.removeAttribute('target'); }
 
