@@ -115,10 +115,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (max-width:860px){.sim{grid-template-columns:minmax(0,1fr)}.pillars{grid-template-columns:1fr}}
 @media (max-width:520px){nav .btn{display:none}.panel,.res{padding:22px}}
 /* nav v2 */
+.navend .biz{font-size:14px;font-weight:700;color:var(--navy);text-decoration:none;border:2px solid var(--navy);border-radius:999px;padding:8px 16px;white-space:nowrap}
+.navend .biz:hover{background:var(--navy);color:#fff}
+.links .biz-m{display:none}
+@media (max-width:1200px){.links .biz-m{display:block}}
+@media (max-width:600px){.navend .biz{display:none}}
+
 nav .wrap{max-width:1120px}
 nav .wrap{gap:24px}
 .links{display:flex;gap:30px;align-items:center;margin:0 auto}
-.links a{text-decoration:none;font-size:15px;font-weight:500;color:var(--muted);padding:6px 0;border-bottom:2px solid transparent;transition:color .15s}
+.links a{white-space:nowrap;text-decoration:none;font-size:15px;font-weight:500;color:var(--muted);padding:6px 0;border-bottom:2px solid transparent;transition:color .15s}
 .links a:hover{color:var(--navy)}
 .links a.on{color:var(--navy);border-bottom-color:var(--coral)}
 .links .btn-m{display:none}
@@ -131,7 +137,7 @@ nav.open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 nav.open .burger span:nth-child(2){opacity:0}
 nav.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 section[id]{scroll-margin-top:72px}
-@media (max-width:1060px){
+@media (max-width:1200px){
   .burger{display:block}
   .navend .btn{display:none}
   .links{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;margin:0;background:var(--bg);border-bottom:1px solid var(--line);padding:6px 24px 20px;box-shadow:0 12px 24px rgba(20,33,61,.08)}
@@ -155,8 +161,8 @@ section[id]{scroll-margin-top:72px}
 
 <nav><div class="wrap">
   <a class="logo" href="/en/"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#mark"/></svg>PITCHEAMOS</a>
-  <div class="links"><a href="/en/#about">About me</a><a href="/en/#how">Method</a><a href="/en/simulator" class="on" aria-current="page">Simulator</a><a href="/en/#plans">Plans</a><a href="/en/#faq">FAQ</a><a class="btn btn-m" href="https://meetings.hubspot.com/matias-bossie" target="_blank" rel="noopener">Book your assessment</a></div>
-  <div class="navend"><a class="lang" href="/simulador" title="Español">ES</a><a class="btn" href="https://meetings.hubspot.com/matias-bossie" target="_blank" rel="noopener">Book your assessment</a><button class="burger" aria-label="Open menu" aria-expanded="false" onclick="var n=this.closest('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><span></span><span></span><span></span></button></div>
+  <div class="links"><a href="/en/#about">About me</a><a href="/en/#how">Method</a><a href="/en/simulator" class="on" aria-current="page">Simulator</a><a href="/en/#plans">Plans</a><a href="/en/#faq">FAQ</a><a class="biz-m" href="https://business.pitcheamos.com">For companies →</a><a class="btn btn-m" href="https://meetings.hubspot.com/matias-bossie" target="_blank" rel="noopener">Book your assessment</a></div>
+  <div class="navend"><a class="biz" href="https://business.pitcheamos.com">For companies</a><a class="lang" href="/simulador" title="Español">ES</a><a class="btn" href="https://meetings.hubspot.com/matias-bossie" target="_blank" rel="noopener">Book your assessment</a><button class="burger" aria-label="Open menu" aria-expanded="false" onclick="var n=this.closest('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><span></span><span></span><span></span></button></div>
 </div></nav>
 
 <header><div class="wrap">
