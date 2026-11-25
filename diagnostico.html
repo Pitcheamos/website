@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<!-- Amplitude: Analytics + Session Replay + Web Experiment + Guides & Surveys -->
+<script src="https://cdn.amplitude.com/script/f75ce8e8fee4c57b00bf503150c825ae.js"></script>
+<script src="https://cdn.amplitude.com/script/f75ce8e8fee4c57b00bf503150c825ae.engagement.js"></script>
+<script>
+  if (window.amplitude) {
+  if (window.sessionReplay) window.amplitude.add(window.sessionReplay.plugin({ sampleRate: 1, privacyConfig: { defaultMaskLevel: 'light', unmaskSelector: ['input', 'textarea', 'select'] } }));
+  if (window.engagement) window.amplitude.add(window.engagement.plugin());
+  window.amplitude.init('f75ce8e8fee4c57b00bf503150c825ae', { fetchRemoteConfig: true, autocapture: true });
+  }
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formulario de diagnóstico · Pitcheamos</title>
+<meta name="description" content="Contame en qué momento de tu búsqueda estás y preparo tu sesión de diagnóstico.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F7F4EF;--navy:#14213D;--coral:#EF6450;--muted:#5B6474;--line:#E4DED4;--card:#FFFFFF}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--navy);font-family:'Inter',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+.wrap>*{min-width:0}
+.hl{color:var(--coral)}
+nav{position:sticky;top:0;z-index:10;background:rgba(247,244,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:900;letter-spacing:.06em;font-size:17px}
+.logo svg{width:34px;height:34px}
+.btn{display:inline-block;background:var(--coral);color:#fff;text-decoration:none;font-weight:700;padding:14px 24px;border-radius:999px;border:0;font-size:16px;cursor:pointer}
+nav .btn{padding:10px 18px;font-size:14px}
+header{padding:64px 0 28px}
+.eyebrow{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+h1{font-size:clamp(36px,5.4vw,60px);line-height:1.04;letter-spacing:-.035em;font-weight:900;overflow-wrap:break-word}
+.lead{font-size:19px;color:var(--muted);margin-top:18px;max-width:640px}
+.sim{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:28px;padding:28px 0 60px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:30px}
+.field{margin-bottom:26px}
+.field:last-child{margin-bottom:0}
+.label{display:flex;justify-content:space-between;align-items:baseline;font-weight:700;font-size:16px;margin-bottom:10px;gap:12px}
+.label output{color:var(--coral);font-weight:900;font-size:22px;white-space:nowrap}
+.hint{font-size:13px;color:var(--muted);margin-top:6px}
+input[type=range]{width:100%;accent-color:var(--coral);height:28px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.seg.two{grid-template-columns:repeat(2,1fr)}
+.seg label{position:relative}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg span{display:block;text-align:center;padding:11px 6px;border:1.5px solid var(--line);border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;background:#FDFCFA}
+.seg input:checked+span{border-color:var(--navy);background:var(--navy);color:#fff}
+.seg input:focus-visible+span{outline:2px solid var(--coral);outline-offset:2px}
+.results{display:grid;gap:16px;align-content:start}
+.res{border-radius:24px;padding:28px}
+.res.now{background:var(--card);border:1px solid var(--line)}
+.res.method{background:var(--navy);color:#fff}
+.res h3{font-size:14px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;margin-bottom:10px}
+.res.now h3{color:var(--muted)}
+.res.method h3{color:var(--coral)}
+.big{font-size:clamp(34px,4.6vw,48px);font-weight:900;letter-spacing:-.03em;line-height:1.05}
+.range{font-size:15px;margin-top:6px}
+.res.now .range{color:var(--muted)}
+.res.method .range{color:#C9CFDB}
+.bar{height:12px;border-radius:999px;background:rgba(20,33,61,.08);margin-top:18px;overflow:hidden}
+.res.method .bar{background:rgba(255,255,255,.14)}
+.bar i{display:block;height:100%;border-radius:999px;background:var(--muted);transition:width .4s ease}
+.res.method .bar i{background:var(--coral)}
+.stats{display:flex;gap:22px;margin-top:16px;font-size:14px;flex-wrap:wrap}
+.stats b{display:block;font-size:20px;font-weight:800}
+.res.now .stats span{color:var(--muted)}
+.res.method .stats span{color:#C9CFDB}
+.res.method .stats b{color:#fff}
+.gain{background:#FDECE8;border-radius:16px;padding:16px 20px;font-weight:700;font-size:16px}
+.gain b{color:var(--coral)}
+.cta{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.cta p{color:var(--muted);font-size:14px;flex:1;min-width:200px}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(28px,3.6vw,40px);line-height:1.1;letter-spacing:-.03em;font-weight:900}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px}
+.card .n{display:inline-flex;width:38px;height:38px;border-radius:11px;background:var(--coral);color:#fff;font-weight:800;align-items:center;justify-content:center;margin-bottom:14px}
+.card h3{font-size:19px;font-weight:800;margin-bottom:6px}
+.card p{color:var(--muted)}
+details{border-top:1px solid var(--line);padding:18px 0}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-weight:700;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";color:var(--coral);font-weight:900;font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+details .body{color:var(--muted);margin-top:12px;font-size:15px}
+details table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+details th,details td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+details th{color:var(--navy)}
+details ul{margin:8px 0 0 18px}
+details li{margin-bottom:6px}
+.disclaimer{font-size:13px;color:var(--muted);margin-top:24px;max-width:760px}
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;align-items:start}
+.contact .sub{color:var(--muted);font-size:17px;margin:14px 0 24px}
+.cform{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:30px;display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+.cform label{font-weight:600;font-size:15px;display:grid;gap:6px}
+.cform input,.cform textarea{width:100%;min-width:0;font:inherit;color:var(--navy);padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;background:#FDFCFA}
+.cform input:focus,.cform textarea:focus{outline:none;border-color:var(--coral)}
+.cform textarea{min-height:90px;resize:vertical}
+.cform .small{font-size:12px;color:var(--muted)}
+.hp{display:none}
+@media (max-width:860px){.contact{grid-template-columns:minmax(0,1fr)}}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:860px){.sim{grid-template-columns:minmax(0,1fr)}.pillars{grid-template-columns:1fr}}
+@media (max-width:520px){nav .btn{display:none}.panel,.res{padding:22px}}
+/* nav v2 */
+.navend .biz{font-size:14px;font-weight:700;color:var(--navy);text-decoration:none;border:2px solid var(--navy);border-radius:999px;padding:8px 16px;white-space:nowrap}
+.navend .biz:hover{background:var(--navy);color:#fff}
+.links .biz-m{display:none}
+@media (max-width:1200px){.links .biz-m{display:block}}
+@media (max-width:600px){.navend .biz{display:none}}
+
+nav .wrap{max-width:1120px}
+nav .wrap{gap:24px}
+.links{display:flex;gap:30px;align-items:center;margin:0 auto}
+.links a{white-space:nowrap;text-decoration:none;font-size:15px;font-weight:500;color:var(--muted);padding:6px 0;border-bottom:2px solid transparent;transition:color .15s}
+.links a:hover{color:var(--navy)}
+.links a.on{color:var(--navy);border-bottom-color:var(--coral)}
+.links .btn-m{display:none}
+.navend{display:flex;align-items:center;gap:14px}
+.navend .lang{font-size:13px;font-weight:700;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 12px;letter-spacing:.04em}
+.navend .lang:hover{border-color:var(--navy);color:var(--navy)}
+.burger{display:none;background:none;border:0;width:42px;height:42px;cursor:pointer;padding:9px;border-radius:10px}
+.burger span{display:block;height:2px;background:var(--navy);border-radius:2px;margin:5px 0;transition:.2s}
+nav.open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+nav.open .burger span:nth-child(2){opacity:0}
+nav.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+section[id]{scroll-margin-top:72px}
+@media (max-width:1200px){
+  .burger{display:block}
+  .navend .btn{display:none}
+  .links{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;margin:0;background:var(--bg);border-bottom:1px solid var(--line);padding:6px 24px 20px;box-shadow:0 12px 24px rgba(20,33,61,.08)}
+  .links a{padding:14px 0;border-bottom:1px solid var(--line);font-size:17px;color:var(--navy)}
+  .links a.on{border-bottom-color:var(--line);color:var(--coral)}
+  .links .btn-m{display:block;margin-top:16px;text-align:center;border:0;color:#fff;padding:14px 24px}
+  nav.open .links{display:flex}
+}
+</style>
+<style>
+.diag{max-width:760px;margin:0 auto;padding:0 24px}
+.diag header{padding:56px 0 24px}
+fieldset{border:0;display:grid;gap:14px;margin:0 0 8px}
+legend{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin-bottom:6px;padding:0}
+.cform select{width:100%;min-width:0;font:inherit;color:var(--navy);padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;background:#FDFCFA}
+.cform .opt{font-weight:400;color:var(--muted)}
+.cform input[type=file]{padding:10px;background:#fff;cursor:pointer}
+.cform input[type=file]::file-selector-button{border:0;border-radius:999px;padding:8px 14px;margin-right:10px;background:var(--coral);color:#fff;font:inherit;font-weight:600;cursor:pointer}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.row3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.checks label{display:flex;gap:10px;align-items:center;font-weight:500;border:1.5px solid var(--line);border-radius:12px;padding:11px 13px;background:#FDFCFA;cursor:pointer}
+.checks input{width:18px;height:18px;padding:0;accent-color:var(--coral)}
+.scale{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.scale label{position:relative}
+.scale input{position:absolute;opacity:0;pointer-events:none}
+.scale span{display:block;text-align:center;padding:11px 0;border:1.5px solid var(--line);border-radius:12px;font-weight:700;cursor:pointer;background:#FDFCFA}
+.scale input:checked+span{background:var(--navy);border-color:var(--navy);color:#fff}
+.scale input:focus-visible+span{outline:2px solid var(--coral);outline-offset:2px}
+.hint{font-size:13px;color:var(--muted);font-weight:400}
+@media (max-width:640px){.row2,.row3,.checks{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mark" viewBox="0 0 100 100">
+      <path d="M12 10 H58 Q66 10 66 18 V48 Q66 56 58 56 H30 L18 68 V56 H12 Q4 56 4 48 V18 Q4 10 12 10 Z" fill="#14213D"/>
+      <path d="M88 40 H48 Q40 40 40 48 V74 Q40 82 48 82 H72 L84 94 V82 H88 Q96 82 96 74 V48 Q96 40 88 40 Z" fill="#EF6450"/>
+    </symbol>
+  </defs>
+</svg>
+
+<nav><div class="wrap">
+  <a class="logo" href="/"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#mark"/></svg>PITCHEAMOS</a>
+  <div class="links"><a href="/#quien">Quién soy</a><a href="/#como">Método</a><a href="/simulador">Simulador</a><a href="/#paquetes">Paquetes</a><a href="/#faq">Preguntas</a><a class="biz-m" href="https://business.pitcheamos.com">Soy empresa →</a><a class="btn btn-m" href="https://meetings.hubspot.com/matias-bossie" target="_blank" rel="noopener">Agendá tu diagnóstico</a></div>
+  <div class="navend"><a class="biz" href="https://business.pitcheamos.com">Soy empresa</a><a class="lang" href="/en/simulator" title="English">EN</a><a class="btn" href="https://meetings.hubspot.com/matias-bossie" target="_blank" rel="noopener">Agendá tu diagnóstico</a><button class="burger" aria-label="Abrir menú" aria-expanded="false" onclick="var n=this.closest('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><span></span><span></span><span></span></button></div>
+</div></nav>
+
+<div class="diag">
+<header>
+  <span class="eyebrow">Formulario de diagnóstico</span>
+  <h1>Contame dónde estás <span class="hl">y armamos el plan.</span></h1>
+  <p class="lead">Son unos 5 minutos. Con esto preparo tu sesión de diagnóstico para que vayamos directo a lo importante.</p>
+</header>
+
+<form name="diagnostico" id="diagForm" method="POST" action="/diagnostico-gracias" data-hs class="cform" style="margin-bottom:72px">
+  <input type="hidden" name="form-name" value="diagnostico">
+  <input type="hidden" name="segmento" value="b2c">
+  <p class="hp"><label>No completar: <input name="bot-field"></label></p>
+
+  <fieldset>
+    <legend>Sobre vos</legend>
+    <div class="row2">
+      <label>Nombre y apellido<input type="text" name="nombre" required autocomplete="name"></label>
+      <label>Email<input type="email" name="email" required autocomplete="email"></label>
+    </div>
+    <div class="row2">
+      <label>WhatsApp<input type="tel" name="telefono" required placeholder="Con código de país, ej. +52 55…" autocomplete="tel"></label>
+      <label>País y ciudad<input type="text" name="ubicacion" required placeholder="Ej. CDMX, México"></label>
+    </div>
+    <label>Tu perfil de LinkedIn<input type="url" name="linkedin" required placeholder="https://linkedin.com/in/…"></label>
+    <label><span>El último CV que enviaste <span class="opt">(PDF o Word, hasta 5 MB)</span></span><input type="file" name="cvfile" required accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"></label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Tu búsqueda</legend>
+    <div class="row2">
+      <label>¿En qué situación estás?
+        <select name="situacion" required>
+          <option value="">Elegí una opción</option>
+          <option value="Unemployed, actively searching">Sin trabajo, buscando</option>
+          <option value="Employed, wants to change">Con trabajo, quiero cambiar</option>
+          <option value="Has an interview or case study coming up">Tengo una entrevista o challenge pronto</option>
+          <option value="Has an offer to negotiate">Tengo una oferta para negociar</option>
+          <option value="Wants to apply abroad">Quiero aplicar afuera</option>
+        </select></label>
+      <label>¿Hace cuánto buscás?
+        <select name="desde" required>
+          <option value="">Elegí una opción</option>
+          <option value="Not started yet">Todavía no empecé</option>
+          <option value="Less than 1 month">Menos de 1 mes</option>
+          <option value="1 to 3 months">De 1 a 3 meses</option>
+          <option value="3 to 6 months">De 3 a 6 meses</option>
+          <option value="More than 6 months">Más de 6 meses</option>
+        </select></label>
+    </div>
+    <label><span>¿Qué puestos o industrias buscás? <span class="hint">Todos los que quieras, separados por coma</span></span><input type="text" name="objetivo" required placeholder="Ej. Operaciones, back office, aviación, hotelería"></label>
+    <div class="row2">
+      <label>Tu nivel
+        <select name="nivel" required>
+          <option value="">Elegí una opción</option>
+          <option value="Junior">Junior</option>
+          <option value="Mid-level">Semi senior</option>
+          <option value="Senior">Senior</option>
+          <option value="Manager / Lead">Gerente / líder</option>
+        </select></label>
+      <label>¿Dónde buscás?
+        <select name="mercado" required>
+          <option value="">Elegí una opción</option>
+          <option value="Local (LATAM)">En mi país (LATAM)</option>
+          <option value="Abroad">Afuera</option>
+          <option value="Both">Las dos</option>
+        </select></label>
+    </div>
+    <div class="row3">
+      <label><span>Postulaciones <span class="hint">último mes</span></span><input type="number" name="postulaciones" required min="0" inputmode="numeric" placeholder="0"></label>
+      <label><span>Entrevistas <span class="hint">último mes</span></span><input type="number" name="entrevistas" required min="0" inputmode="numeric" placeholder="0"></label>
+      <label><span>Ofertas <span class="hint">último mes</span></span><input type="number" name="ofertas" required min="0" inputmode="numeric" placeholder="0"></label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Qué te está costando</legend>
+    <div style="font-weight:600;font-size:15px">¿Qué te cuesta más? <span class="hint">Elegí todas las que apliquen</span></div>
+    <div class="checks">
+      <label><input type="checkbox" name="dificultad" value="Knowing what to aim for">Saber a qué apuntar</label>
+      <label><input type="checkbox" name="dificultad" value="Getting interviews">Conseguir entrevistas</label>
+      <label><input type="checkbox" name="dificultad" value="The interviews themselves">Las entrevistas en sí</label>
+      <label><input type="checkbox" name="dificultad" value="Case studies / challenges">Los challenges</label>
+      <label><input type="checkbox" name="dificultad" value="Negotiating salary">Negociar el sueldo</label>
+      <label><input type="checkbox" name="dificultad" value="Interviews in English">Entrevistas en inglés</label>
+      <label><input type="checkbox" name="dificultad" value="Confidence / the waiting">La confianza y la espera</label>
+      <label><input type="checkbox" name="dificultad" value="CV / LinkedIn">El CV o LinkedIn</label>
+      <label><input type="checkbox" name="dificultad" value="Other" id="difOtro">Otro</label>
+    </div>
+    <label id="difOtroBox" hidden><span>¿Qué otra cosa te cuesta?</span><input type="text" name="dificultad_otro" placeholder="Contámelo en pocas palabras"></label>
+    <div style="font-weight:600;font-size:15px;margin-top:6px">Del 1 al 5, ¿cuánta confianza tenés hoy en tus entrevistas?</div>
+    <div class="scale">
+      <label><input type="radio" name="confianza" value="1" required><span>1</span></label>
+      <label><input type="radio" name="confianza" value="2"><span>2</span></label>
+      <label><input type="radio" name="confianza" value="3"><span>3</span></label>
+      <label><input type="radio" name="confianza" value="4"><span>4</span></label>
+      <label><input type="radio" name="confianza" value="5"><span>5</span></label>
+    </div>
+    <div class="row2">
+      <label>Horas por semana para buscar
+        <select name="horas" required>
+          <option value="">Elegí una opción</option>
+          <option value="Less than 3">Menos de 3</option>
+          <option value="3 to 6">De 3 a 6</option>
+          <option value="6 to 10">De 6 a 10</option>
+          <option value="10 to 15">De 10 a 15</option>
+          <option value="15 to 25">De 15 a 25</option>
+          <option value="More than 25">Más de 25</option>
+        </select></label>
+      <label>¿Para cuándo querés estar trabajando?<input type="text" name="meta" required placeholder="Ej. Antes de marzo"></label>
+    </div>
+    <label>Contame tu situación en pocas líneas<textarea name="mensaje" required placeholder="Procesos abiertos, entrevistas que no salieron bien, dudas…"></textarea></label>
+  </fieldset>
+
+  <button class="btn" type="submit">Enviar y agendar mi diagnóstico</button>
+  <p class="small">Uso tus datos solo para preparar tu sesión. Ver <a href="/privacidad">aviso de privacidad</a>.</p>
+</form>
+</div>
+
+<footer><div class="wrap">
+  <span>© 2026 Pitcheamos · Coaching de carrera · Una marca de Revum Group LLC</span>
+  <span><a href="https://instagram.com/pitcheamos" target="_blank" rel="noopener">@pitcheamos</a> · pitcheamos.com · <a href="/privacidad">Aviso de privacidad</a></span>
+</div></footer>
+
+<script>document.querySelectorAll('nav .links a').forEach(function(a){a.addEventListener('click',function(){var n=document.querySelector('nav');n.classList.remove('open');n.querySelector('.burger').setAttribute('aria-expanded','false')})})</script>
+<script src="/nohash.js"></script>
+<script src="/diag.js"></script>
+</body>
+</html>
